@@ -41,7 +41,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
 
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
-    <ul className={classnames("pagination-container")}>
+    <ul className={classnames("pagination-container sm:text-center")}>
       <li
         className={classnames("pagination-item", {
           disabled: currentPage === 1,
@@ -62,7 +62,7 @@ const Pagination: React.FC<PaginationProps> = (props) => {
         return (
           <li
             key={index}
-            className={classnames("pagination-item", {
+            className={classnames("pagination-item ", {
               selected: pageNumber === currentPage,
             })}
             onClick={() => onPageChange(pageNumber)}

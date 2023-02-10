@@ -17,7 +17,7 @@ export const usePagination = ({
   siblingCount?: number;
   currentPage: number;
 }): number[] => {
-  const paginationRange: any = useMemo(() => {
+  const paginationRange:any = useMemo(() => {
     const totalPageCount = Math.ceil(totalCount / pageSize);
 
     const totalPageNumbers = siblingCount + 5;

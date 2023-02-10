@@ -78,19 +78,19 @@ export default function UserTable(props: UserTableProps) {
   }
 
   return (
-    <div className="lg:container lg:mx-auto mx-auto ">
-      <h1 className="text-5xl text-center font-medium py-9">
+    <div className="lg:container lg:mx-auto sm:mx-auto mx-auto ">
+      <h1 className="text-5xl text-center font-medium py-9 lg:text-5xl sm:text-4xl sm:text-center">
         User App for assignment details
       </h1>
-      <div className="flex flex-col justify-between mx-24">
-        <div className="flex flex-row justify-between mb-5">
+      <div className="flex flex-col justify-between mx-24 sm:flex-wrap">
+        <div className="flex flex-row justify-between sm:justify-between mb-5 xs:flex-wrap">
           <div>
             <label className="relative block">
               <span className="sr-only">Search</span>
               <span className="absolute inset-y-0 left-0 flex items-center pl-2"></span>
               <input
                 className="placeholder:italic placeholder:text-slate-400  block bg-white border border-slate-300 rounded-md py-2 pl-5 pr-24 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-md"
-                placeholder="Search by username, id,..."
+                placeholder="Search by name, email..."
                 type="text"
                 name="search"
                 onChange={handleChange}
@@ -135,7 +135,7 @@ export default function UserTable(props: UserTableProps) {
               </tr>
             </thead>
 
-            <tbody className="h-14 mx-auto">
+            <tbody className="h-14 mx-auto sm:mx-auto">
               {dataSorting.map((item, index) => (
                 <tr key={index} className="sm:table-row">
                   <td className="border border-slate-300 text-lg text-center">
