@@ -1,12 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import { Route, Routes } from 'react-router-dom';
+import UserTable from './components/userTable';
 function App() {
+
   return (
-    <div className="App">
-    
-    </div>
+    <Routes>
+    <Route path="/" element={<UserTable />} />
+      <Route path="home" element={<UserTable />} />
+
+  </Routes>
   );
 }
 
