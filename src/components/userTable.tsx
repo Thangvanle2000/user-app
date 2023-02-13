@@ -11,8 +11,7 @@ export default function UserTable(props: UserTableProps) {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const page = searchParams.get("page") || "1";
-  let [listUser] = UseGetUser(`/?results=100&page=${[page]}`);
-
+  let [listUser] = UseGetUser(`/?results=100`);
 
   //Handle search input
   const [searchInput, setSearchInput] = useState<string>("");
@@ -109,6 +108,7 @@ export default function UserTable(props: UserTableProps) {
           <table className="border-collapse border w-full table-auto sm:table sm:table-fixed sm:w-full border-slate-400">
             <thead className="h-10 mx-auto">
               <tr className="bg-tablebg ">
+
                 <th className="border border-slate-400 text-lg font-semibold text-center w-1/12 sm:w-1/12">
                   ID
                 </th>
@@ -134,13 +134,16 @@ export default function UserTable(props: UserTableProps) {
                 </th>
               </tr>
             </thead>
-
+     
             <tbody className="h-14 mx-auto sm:mx-auto">
+           
               {dataSorting.map((item, index) => (
                 <tr key={index} className="sm:table-row">
+ 
                   <td className="border border-slate-300 text-lg text-center">
-                    {index + 1}
+                   {item.id.name}
                   </td>
+           
                   <td className="border border-slate-300 text-lg text-start px-2 sm:w-full">
                     {item.name.title} {item.name.first} {item.name.last}
                   </td>
@@ -173,6 +176,7 @@ export default function UserTable(props: UserTableProps) {
                 </tr>
               ))}
             </tbody>
+
           </table>
           <div className="flex justify-center py-4">
             <Pagination
